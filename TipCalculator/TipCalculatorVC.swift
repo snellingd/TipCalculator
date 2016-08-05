@@ -28,6 +28,10 @@ class TipCalculatorVC: UIViewController {
     // MARK: - Initialize Views
     override func viewDidLoad() {
         super.viewDidLoad()
+        billAmountTF.layer.cornerRadius = 10.0
+        billAmountTF.attributedPlaceholder = NSAttributedString(string:"Enter bill amount here...",
+                                                             attributes:[NSForegroundColorAttributeName: UIColor.init(red: 30.0/255.0, green: 158.0/255.0, blue: 73.0/255.0, alpha: 1.0)])
+        
         tipPercentValue()
         splitPeopleValue()
     }
