@@ -57,7 +57,7 @@
                                                 <color key="textColor" red="0.1176470588" green="0.61960784310000006" blue="0.28627450980000002" alpha="1" colorSpace="calibratedRGB"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
-                                            <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.10000000000000001" minValue="0.10000000000000001" maxValue="0.29999999999999999" translatesAutoresizingMaskIntoConstraints="NO" id="xOr-KT-Amw">
+                                            <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.14999999999999999" minValue="0.10000000000000001" maxValue="0.29999999999999999" translatesAutoresizingMaskIntoConstraints="NO" id="xOr-KT-Amw">
                                                 <color key="tintColor" red="0.11764705882352941" green="0.61960784313725492" blue="0.28627450980392155" alpha="1" colorSpace="calibratedRGB"/>
                                             </slider>
                                         </subviews>
@@ -159,6 +159,18 @@
                             <constraint firstItem="gRW-Vo-xk2" firstAttribute="top" secondItem="rb1-tK-j6a" secondAttribute="bottom" constant="50" id="me7-zW-OUX"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="billAmountLbl" destination="rb1-tK-j6a" id="hY4-hJ-EBe"/>
+                        <outlet property="splitAmountLbl" destination="XkT-wt-ZEI" id="oAF-hw-10n"/>
+                        <outlet property="splitPeopleLbl" destination="5d3-hJ-F7R" id="7UB-v5-VYE"/>
+                        <outlet property="splitSlider" destination="lFK-nb-z5b" id="ko6-ix-sHU"/>
+                        <outlet property="tipAmountLbl" destination="aHo-cf-y1q" id="TXp-SQ-JxW"/>
+                        <outlet property="tipCalculateTileLbl" destination="FAD-7n-KES" id="sip-jV-twW"/>
+                        <outlet property="tipCalculateTileView" destination="0gg-Lq-k4Z" id="qWn-fG-35O"/>
+                        <outlet property="tipPercentLbl" destination="2WM-rR-1m2" id="UOS-rh-QSO"/>
+                        <outlet property="tipPercentSlider" destination="xOr-KT-Amw" id="WuL-Jm-Kif"/>
+                        <outlet property="totalAmountLbl" destination="PF5-si-CDD" id="kBW-d7-LNO"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
