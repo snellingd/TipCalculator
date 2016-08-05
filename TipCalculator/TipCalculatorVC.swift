@@ -14,7 +14,7 @@ class TipCalculatorVC: UIViewController {
     
     @IBOutlet weak var tipCalculateTileView: UIView!
     @IBOutlet weak var tipCalculateTileLbl: UILabel!
-    @IBOutlet weak var billAmountLbl: UITextField!
+    @IBOutlet weak var billAmountTF: UITextField!
     @IBOutlet weak var tipPercentLbl: UILabel!
     @IBOutlet weak var tipPercentSlider: UISlider!
     @IBOutlet weak var tipAmountLbl: UILabel!
@@ -34,7 +34,18 @@ class TipCalculatorVC: UIViewController {
     }
 
     // MARK: - @IBActions
+    @IBAction func billAmountChanges(_ sender: AnyObject) {
+        
+        
+    }
     
     //MARK: - Functions
+    func calculateTip() {
+        tipCalculate.tipPercent = Double(tipPercentSlider.value)
+        tipCalculate.billAmount = ((billAmountTF.text)! as NSString).doubleValue
+        tipCalculate.calculateTip()
+    }
+    
+    
 }
 

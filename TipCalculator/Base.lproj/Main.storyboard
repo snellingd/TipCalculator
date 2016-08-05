@@ -28,6 +28,9 @@
                                 <color key="textColor" red="0.11764705882352941" green="0.61960784313725492" blue="0.28627450980392155" alpha="1" colorSpace="calibratedRGB"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" keyboardType="decimalPad"/>
+                                <connections>
+                                    <action selector="billAmountChanges:" destination="BYZ-38-t0r" eventType="editingChanged" id="o1w-R5-fgR"/>
+                                </connections>
                             </textField>
                             <view contentMode="scaleAspectFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="0gg-Lq-k4Z">
                                 <frame key="frameInset" width="375" height="71"/>
@@ -160,7 +163,7 @@
                         </constraints>
                     </view>
                     <connections>
-                        <outlet property="billAmountLbl" destination="rb1-tK-j6a" id="hY4-hJ-EBe"/>
+                        <outlet property="billAmountTF" destination="rb1-tK-j6a" id="yYl-hp-mbe"/>
                         <outlet property="splitAmountLbl" destination="XkT-wt-ZEI" id="oAF-hw-10n"/>
                         <outlet property="splitPeopleLbl" destination="5d3-hJ-F7R" id="7UB-v5-VYE"/>
                         <outlet property="splitSlider" destination="lFK-nb-z5b" id="ko6-ix-sHU"/>
