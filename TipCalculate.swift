@@ -10,6 +10,7 @@ import Foundation
 
 class TipCalculate {
     
+    //MARK: - Class Properties
     private var _billAmount = 0.0
     private var _tipPercent = 0.0
     private var _tipAmount = 0.0
@@ -53,12 +54,14 @@ class TipCalculate {
         return _splitAmount
     }
     
+    //MARK: - Initialize Class
     init(billAmount: Double, tipPercent:Double, splitPeople:Int) {
         self._billAmount = billAmount
         self._tipPercent = tipPercent
         self._splitPeople = splitPeople
     }
     
+    //MARK: - Functions
     func calculateTip() {
         _tipAmount = billAmount * tipPercent
         _totalAmount = tipAmount + billAmount
@@ -66,6 +69,5 @@ class TipCalculate {
     
     func splitupAmount() {
         _splitAmount = (tipAmount + billAmount) / Double(splitPeople)
-        print((Double(splitPeople)))
     }
 }
