@@ -124,6 +124,9 @@
                                                 <constraints>
                                                     <constraint firstAttribute="width" constant="200" id="W80-vn-cCG"/>
                                                 </constraints>
+                                                <connections>
+                                                    <action selector="splitPeopleChanges:" destination="BYZ-38-t0r" eventType="valueChanged" id="GCK-26-BPW"/>
+                                                </connections>
                                             </slider>
                                         </subviews>
                                     </stackView>

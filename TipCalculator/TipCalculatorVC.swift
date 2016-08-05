@@ -24,12 +24,14 @@ class TipCalculatorVC: UIViewController {
     @IBOutlet weak var splitAmountLbl: UILabel!
     
     // MARK: - @Properties
-    var tipCalc = TipCalculate(billAmount: 0.0, tipPercent: 0.0, splitPeople: 0)
+    var tipCalc = TipCalculate(billAmount: 0.0, tipPercent: 0.0, splitPeople: 0, totalForSplit: 0.0)
+    var getNewTotal = 0.0
     
     // MARK: - Initialize Views
     override func viewDidLoad() {
         super.viewDidLoad()
         tipPercentValue()
+        splitPeopleValue()
     
     }
 
@@ -43,22 +45,39 @@ class TipCalculatorVC: UIViewController {
         calculateTip()
     }
     
+    @IBAction func splitPeopleChanges(_ sender: AnyObject) {
+        splittingTheBill()
+        splitPeopleValue()
+    }
+    
+    
     //MARK: - Functions
     func calculateTip() {
         tipCalc.tipPercent = Double(tipPercentSlider.value)
         tipCalc.billAmount = ((billAmountTF.text)! as NSString).doubleValue
         tipCalc.calculateTip()
+        splittingTheBill ()
         updateUI()
     }
     
     func updateUI() {
         tipAmountLbl.text = String(format:"$%0.2f", tipCalc.tipAmount)
         totalAmountLbl.text = String(format:"$%0.2f", tipCalc.totalAmount)
-        
+        splitAmountLbl.text = String(format:"$%0.2f", tipCalc.splitAmount)
     }
     
     func tipPercentValue() {
         tipPercentLbl.text = "Tip \(Int(tipPercentSlider.value * 100))%"
     }
+    
+    func splitPeopleValue() {
+        splitPeopleLbl.text = "Split \(Int(splitSlider.value))"
+    }
+    
+    func splittingTheBill () {
+        
+        
+    }
+    
 }
 
