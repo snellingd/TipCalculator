@@ -16,7 +16,6 @@ class TipCalculate {
     private var _totalAmount = 0.0
     private var _splitPeople = 0
     private var _splitAmount = 0.0
-    private var _totalForSplit = 0.0
     
     var billAmount: Double {
         get {
@@ -50,19 +49,11 @@ class TipCalculate {
         }
     }
     
-    var totalForSplit: Double {
-        get {
-            return _totalForSplit
-        } set {
-            _totalForSplit = newValue
-        }
-    }
-        
     var splitAmount: Double {
         return _splitAmount
     }
     
-    init(billAmount: Double, tipPercent:Double, splitPeople:Int, totalForSplit: Double) {
+    init(billAmount: Double, tipPercent:Double, splitPeople:Int) {
         self._billAmount = billAmount
         self._tipPercent = tipPercent
         self._splitPeople = splitPeople
@@ -70,10 +61,11 @@ class TipCalculate {
     
     func calculateTip() {
         _tipAmount = billAmount * tipPercent
-        _totalAmount = tipAmount + totalAmount
+        _totalAmount = tipAmount + billAmount
     }
     
     func splitupAmount() {
-        _splitAmount = totalForSplit / Double(splitPeople)
+        _splitAmount = (tipAmount + billAmount) / Double(splitPeople)
+        print((Double(splitPeople)))
     }
 }
