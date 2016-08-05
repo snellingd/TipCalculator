@@ -62,6 +62,9 @@
                                             </label>
                                             <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.14999999999999999" minValue="0.10000000000000001" maxValue="0.29999999999999999" translatesAutoresizingMaskIntoConstraints="NO" id="xOr-KT-Amw">
                                                 <color key="tintColor" red="0.11764705882352941" green="0.61960784313725492" blue="0.28627450980392155" alpha="1" colorSpace="calibratedRGB"/>
+                                                <connections>
+                                                    <action selector="tipPercentChanges:" destination="BYZ-38-t0r" eventType="valueChanged" id="u4m-JI-Wfk"/>
+                                                </connections>
                                             </slider>
                                         </subviews>
                                     </stackView>
