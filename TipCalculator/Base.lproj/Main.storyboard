@@ -16,7 +16,7 @@
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleAspectFit" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter bill amount here..." textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="rb1-tK-j6a">
@@ -28,6 +28,9 @@
                                 <color key="textColor" red="0.11764705882352941" green="0.61960784313725492" blue="0.28627450980392155" alpha="1" colorSpace="calibratedRGB"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" keyboardType="decimalPad"/>
+                                <connections>
+                                    <action selector="billAmountChanges:" destination="BYZ-38-t0r" eventType="editingChanged" id="o1w-R5-fgR"/>
+                                </connections>
                             </textField>
                             <view contentMode="scaleAspectFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="0gg-Lq-k4Z">
                                 <frame key="frameInset" width="375" height="71"/>
@@ -57,8 +60,11 @@
                                                 <color key="textColor" red="0.1176470588" green="0.61960784310000006" blue="0.28627450980000002" alpha="1" colorSpace="calibratedRGB"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
-                                            <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.10000000000000001" minValue="0.10000000000000001" maxValue="0.29999999999999999" translatesAutoresizingMaskIntoConstraints="NO" id="xOr-KT-Amw">
+                                            <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.14999999999999999" minValue="0.10000000000000001" maxValue="0.29999999999999999" translatesAutoresizingMaskIntoConstraints="NO" id="xOr-KT-Amw">
                                                 <color key="tintColor" red="0.11764705882352941" green="0.61960784313725492" blue="0.28627450980392155" alpha="1" colorSpace="calibratedRGB"/>
+                                                <connections>
+                                                    <action selector="tipPercentChanges:" destination="BYZ-38-t0r" eventType="valueChanged" id="u4m-JI-Wfk"/>
+                                                </connections>
                                             </slider>
                                         </subviews>
                                     </stackView>
@@ -71,13 +77,13 @@
                                                 </constraints>
                                             </imageView>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Tip Amount:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WeU-jU-l3C">
-                                                <frame key="frameInset" minX="44" width="192" height="37"/>
+                                                <frame key="frameInset" minX="44" width="240" height="37"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                                 <color key="textColor" red="0.1176470588" green="0.61960784310000006" blue="0.28627450980000002" alpha="1" colorSpace="calibratedRGB"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="$100.00" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aHo-cf-y1q">
-                                                <frame key="frameInset" minX="241" width="62" height="37"/>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="$0.00" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aHo-cf-y1q">
+                                                <frame key="frameInset" minX="289" width="45" height="37"/>
                                                 <fontDescription key="fontDescription" type="system" weight="thin" pointSize="17"/>
                                                 <color key="textColor" red="1" green="0.42119329109999998" blue="0.17458055589999999" alpha="1" colorSpace="calibratedRGB"/>
                                                 <nil key="highlightedColor"/>
@@ -93,13 +99,13 @@
                                                 </constraints>
                                             </imageView>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Total Amount:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HEX-0U-ahL">
-                                                <frame key="frameInset" minX="44" width="192" height="37"/>
+                                                <frame key="frameInset" minX="44" width="240" height="37"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                                 <color key="textColor" red="0.1176470588" green="0.61960784310000006" blue="0.28627450980000002" alpha="1" colorSpace="calibratedRGB"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="$100.00" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PF5-si-CDD">
-                                                <frame key="frameInset" minX="241" width="62" height="37"/>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="$0.00" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PF5-si-CDD">
+                                                <frame key="frameInset" minX="289" width="45" height="37"/>
                                                 <fontDescription key="fontDescription" type="system" weight="thin" pointSize="17"/>
                                                 <color key="textColor" red="1" green="0.42119329109999998" blue="0.17458055589999999" alpha="1" colorSpace="calibratedRGB"/>
                                                 <nil key="highlightedColor"/>
@@ -118,6 +124,9 @@
                                                 <constraints>
                                                     <constraint firstAttribute="width" constant="200" id="W80-vn-cCG"/>
                                                 </constraints>
+                                                <connections>
+                                                    <action selector="splitPeopleChanges:" destination="BYZ-38-t0r" eventType="valueChanged" id="GCK-26-BPW"/>
+                                                </connections>
                                             </slider>
                                         </subviews>
                                     </stackView>
@@ -130,13 +139,13 @@
                                                 </constraints>
                                             </imageView>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Each:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="U0H-7Z-opa">
-                                                <frame key="frameInset" minX="44" width="192" height="37"/>
+                                                <frame key="frameInset" minX="44" width="240" height="37"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                                 <color key="textColor" red="0.1176470588" green="0.61960784310000006" blue="0.28627450980000002" alpha="1" colorSpace="calibratedRGB"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="$100.00" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XkT-wt-ZEI">
-                                                <frame key="frameInset" minX="241" width="62" height="37"/>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="$0.00" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XkT-wt-ZEI">
+                                                <frame key="frameInset" minX="289" width="45" height="37"/>
                                                 <fontDescription key="fontDescription" type="system" weight="thin" pointSize="17"/>
                                                 <color key="textColor" red="1" green="0.42119329109999998" blue="0.17458055589999999" alpha="1" colorSpace="calibratedRGB"/>
                                                 <nil key="highlightedColor"/>
@@ -159,6 +168,18 @@
                             <constraint firstItem="gRW-Vo-xk2" firstAttribute="top" secondItem="rb1-tK-j6a" secondAttribute="bottom" constant="50" id="me7-zW-OUX"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="billAmountTF" destination="rb1-tK-j6a" id="yYl-hp-mbe"/>
+                        <outlet property="splitAmountLbl" destination="XkT-wt-ZEI" id="oAF-hw-10n"/>
+                        <outlet property="splitPeopleLbl" destination="5d3-hJ-F7R" id="7UB-v5-VYE"/>
+                        <outlet property="splitSlider" destination="lFK-nb-z5b" id="ko6-ix-sHU"/>
+                        <outlet property="tipAmountLbl" destination="aHo-cf-y1q" id="TXp-SQ-JxW"/>
+                        <outlet property="tipCalculateTileLbl" destination="FAD-7n-KES" id="sip-jV-twW"/>
+                        <outlet property="tipCalculateTileView" destination="0gg-Lq-k4Z" id="qWn-fG-35O"/>
+                        <outlet property="tipPercentLbl" destination="2WM-rR-1m2" id="UOS-rh-QSO"/>
+                        <outlet property="tipPercentSlider" destination="xOr-KT-Amw" id="WuL-Jm-Kif"/>
+                        <outlet property="totalAmountLbl" destination="PF5-si-CDD" id="kBW-d7-LNO"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
